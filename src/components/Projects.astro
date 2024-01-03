@@ -1,0 +1,87 @@
+---
+import HtmlIcon from './icons/Html.astro';
+import CssIcon from './icons/Css.astro';
+import JavaScriptIcon from './icons/JavaScript.astro';
+import CodeIcon from './icons/Code.astro';
+
+interface Tag {
+	name: string;
+	class: string;
+	icon: any;
+	link?: boolean;
+}
+
+const TAGS: Record<string, Tag> = {
+	HTML: {
+		name: 'HTML',
+		class: 'bg-[#E34F26]/60 border border-[#E34F26]/60',
+		icon: HtmlIcon,
+	},
+	CSS: {
+		name: 'CSS',
+		class: 'bg-[#0C73B8]/60 border border-[#0C73B8]/60',
+		icon: CssIcon,
+	},
+	JAVASCRIPT: {
+		name: 'JavaScript',
+		class: 'bg-[#F0DB4F]/60 border border-[#F0DB4F]/60',
+		icon: JavaScriptIcon,
+	},
+	GITHUB: {
+		name: 'Código',
+		class: 'bg-[#181717]/60 border border-white/20',
+		icon: CodeIcon,
+		link: true,
+	},
+};
+
+const PROJECTS = [
+	{
+		title: 'Encrypt Message',
+		description: 'Encripta y Desencripta al instante tus mensajes con esta página web',
+		demoLink: 'https://g0cardev.github.io/encrypt-message/',
+		githubLink: 'https://github.com/g0carDev/encrypt-message',
+		imageUrl: '/img/projects/encrypt-message.webp',
+		tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.GITHUB],
+	},
+];
+---
+
+{
+	PROJECTS.map(({ title, description, demoLink, githubLink, imageUrl, tags }) => {
+		return (
+			<article class='project'>
+				<h3 class='text-2xl font-semibold text-red-200 mb-2'>{title}</h3>
+				<p class='text-lg text-pretty mb-4'>{description}</p>
+				<ul class=' flex gap-x-2 flex-row mb-4'>
+					{tags.map((tag) => (
+						<li>
+							{tag.link ? (
+								<a 
+								target='_blank' rel='noopener noreferrer'
+								href={githubLink} 
+								class='inline-flex hover:scale-110 hover:font-semibold transition-all'>
+									<span class={`${tag.class} flex gap-x-2 rounded-full text-xs py-1 px-2`}>
+										<tag.icon class='size-4' /> {tag.name}
+									</span>
+								</a>
+							) : (
+								<span class={`${tag.class} flex gap-x-2 rounded-full text-xs py-1 px-2`}>
+									<tag.icon class='size-4' /> {tag.name}
+								</span>
+							)}
+						</li>
+					))}
+				</ul>
+				<a href={demoLink} target='_blank' rel='noopener noreferrer'>
+					<img
+						class='col-span-12 rounded shadow-2xl shadow-white/10 '
+						src={imageUrl}
+						alt={`Captura de Pantalla del Projecto ${imageUrl}`}
+						title="Captura de Pantalla del Projecto"
+					/>
+				</a>
+			</article>
+		);
+	})
+}
