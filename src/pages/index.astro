@@ -1,69 +1,83 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-import GithubIcon from '../components/icons/GithubIcon.astro';
+import GithubIcon from '../components/icons/GitHub.astro';
 import LinkedlnIcon from '../components/icons/LinkedlnIcon.astro';
 import MailIcon from '../components/icons/MailIcon.astro';
+import ProfileCheck from '../components/icons/ProfileCheck.astro';
 import BriefCaseIcon from '../components/icons/BriefCase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import SocialPill from '../components/SocialPill.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Projects from '../components/Projects.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Skills from '../components/Skills.astro';
+import Tools from '../components/icons/Tools.astro';
 ---
 
 <Layout
 	title='G0C4R | FrontEnd Developer'
 	description='Contrata a G0C4R para crear tu aplicación web, Desarrollador Web, Programador, Especializado en replicar diseños en codigo "PixelPerfect"'
 >
-	<main class="px-4">
+	<main class='px-4'>
 		<SectionContainer class='py-44 pb-32'>
-			<img
-				class='rounded-full size-12 mb-4'
-				src='https://media.licdn.com/dms/image/D4E35AQF6tI01-YCgtw/profile-framedphoto-shrink_200_200/0/1669234654035?e=1704402000&v=beta&t=0tYiSrnpy_bVGT46DTkuhbH20onGgTpZM6tBLklcIko'
-				alt='G0C4R Photo'
-			/>
+			<img class='rounded-full size-12 mb-4' src='/img/me.jpg' alt='G0C4R Photo' />
 			<h1 class='text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row flex-wrap gap-4 pb-6 lg:pb-10'>
 				Hey, soy Jacob <a
-					class='flex items-center'
+					class='flex items-center hover:scale-105 transition'
 					href='https://www.linkedin.com/in/jovan-gomez/'
 					target='_blank'
 					rel='noopener'><Badge>Disponible para trabajar</Badge></a
 				>
 			</h1>
-			<h2 class='text-xl lg:text-xl text-balance max-w-[700px] text-white'>
+			<h2 class='text-xl lg:text-2xl text-balance max-w-[700px] text-white'>
 				<span>+3 años de experiencia</span>. <span class='text-yellow-200'>Desarrollador Web</span>. <span
-					class='text-red-200' 
+					class='text-red-200'
 				>
 					De Toluca, Estado de México</span
-				>. <span class='text-sky-200'>Especializado en replicar diseños en codigo "PixelPerfect"</span>.
+				>. <span class='text-sky-200'>Especializado en replicar diseños a codigo "PixelPerfect"</span>.
 			</h2>
 			<nav class='flex items-center gap-4 mt-8 flex-wrap'>
-				<SocialPill href='/'>
+				<SocialPill href='https://www.linkedin.com/in/jovan-gomez/'>
 					<LinkedlnIcon class='size-4 md:size-6' />
-					 Linkedln
+					Linkedln
 				</SocialPill>
-				<SocialPill href=''>
+				<SocialPill href='https://github.com/g0carDev'>
 					<GithubIcon class='size-4 md:size-6' />
-					 Github
+					Github
 				</SocialPill>
 				<SocialPill href='mailto:gocar.jovan@gmail.com'>
 					<MailIcon class='size-4 md:size-6' />
-					 gocar.jovan@gmail.com
+					gocar.jovan@gmail.com
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer id="experience">
+		<SectionContainer id='experiencia'>
 			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
 				<BriefCaseIcon class='size-7' /> Experiencia Laboral
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer id="projects">
+		<SectionContainer id='sobre-mi'>
+			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80'>
+				<ProfileCheck class='size-7' /> Sobre mi
+			</h2>
+			<AboutMe />
+		</SectionContainer>
+		<SectionContainer id='proyectos'>
 			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
 				<CodeIcon class='size-7' /> Proyectos
 			</h2>
 			<Projects />
+			<h3 class='py-5 text-2xl text-yellow-200'>Ecommerce en desarrollo...</h3>
+		</SectionContainer>
+		<SectionContainer id='tecnologias'>
+			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
+				<Tools class='size-7' /> Herramientas de trabajo
+			</h2>
+			<h3 class='pb-5'>Tecnologias y servicios que he utilizado en proyectos personales y laborales.</h3>
+			<Skills />
 		</SectionContainer>
 	</main>
 </Layout>

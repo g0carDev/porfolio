@@ -1,8 +1,81 @@
-<header class='flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto sticky top-0 z-10'>
-	<nav class='flex flex-row border border-black rounded-full px-3 py-1 bg-black/50 backdrop-blur-2xl'>
-		<a class='hover:bg-white/10 active:bg-white/20 rounded-full px-3 transition' href='#experience'>Experiencia</a>
-		<a class='hover:bg-white/10 active:bg-white/20 rounded-full px-3 transition' href='#about'>Sobre mí</a>
-		<a class='hover:bg-white/10 active:bg-white/20 rounded-full px-3 transition' href='#projects'>Proyectos</a>
-		<a class='hover:bg-white/10 active:bg-white/20 rounded-full px-3 transition' href='#contact'>Contácto</a>
+---
+const navItems = [
+	{
+		title: 'Experiencia',
+		label: 'experiencia',
+		url: '/#experiencia',
+	},
+	{
+		title: 'Sobre mí',
+		label: 'sobre-mi',
+		url: '/#sobre-mi',
+	},
+	{
+		title: 'Proyectos',
+		label: 'proyectos',
+		url: '/#proyectos',
+	},
+	{
+		title: 'Contacto',
+		label: 'contacto',
+		url: '/#contacto',
+	},
+];
+---
+
+<header class='h-14 flex justify-center items-center pt-3 mx-auto sticky top-0 w-full z-10'>
+	<nav
+		class={`
+      w-full max-w-max  min-h-full
+      border-2 border-gray-500 rounded-full md:px-6 py-2
+      flex flex-wrap flex-row items-center justify-center
+    bg-black/50 backdrop-blur-2xl
+    `}
+	>
+		{
+			navItems.map((link) => (
+				<a
+					class='hover:bg-white/10 px-2  py-1 rounded-full transition ease-in text-sm sm:text-base capitalize'
+					aria-label={link.label}
+					href={link.url}
+				>
+					{link.title}
+				</a>
+			))
+		}
 	</nav>
 </header>
+
+<script>
+	const sections = document.querySelectorAll('section[id]');
+
+	function scrollActive() {
+		const scrollY = window.pageYOffset;
+
+		sections.forEach((current: any) => {
+			const sectionHeight = current.offsetHeight;
+			const sectionTop = current.offsetTop - 50;
+			let sectionId = current.getAttribute('id');
+
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				document.querySelector('nav a[href*=' + sectionId + ']')?.classList.add('link-active');
+			} else {
+				document.querySelector('nav a[href*=' + sectionId + ']')?.classList.remove('link-active');
+			}
+		});
+	}
+	window.addEventListener('scroll', scrollActive);
+</script>
+
+<style>
+	nav {
+		animation: nav-shadown 1s linear both;
+		animation-timeline: scroll();
+		animation-range: 0 400px;
+	}
+	@keyframes nav-shadown {
+		to {
+			@apply shadow-xl;
+		}
+	}
+</style>
