@@ -1,14 +1,22 @@
-<footer class='bg-black/20 backdrop-blur-lg my-10'>
-	<div class='w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between'>
-		<span class='text-sm text-yellow-200/90 sm:text-center'
-			>© 2024 <code class='text-base'>G0C4R</code>. Casi todos los derechos reservados.
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+	class='rounded-lg shadow px-4 mt-10 bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center'
+>
+	<div class='w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between'>
+		<span class='text-sm sm:text-center text-zinc-200/90'
+			>© {currentYear}
+			<a href='https://g0car.dev/' class='hover:underline'> <code class='text-base'>G0C4R</code></a>. Casi todos los
+			derechos reservados.
 		</span>
 		<ul class='flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0'>
 			<li>
-				<a href='#about' class='hover:underline me-4 md:me-6'>Sobre Mí</a>
+				<a href='/#sobre-mi' class='hover:underline me-4 md:me-6'>Sobre mí</a>
 			</li>
 			<li>
-				<a href='#contac' class='hover:underline'>Contácto</a>
+				<a href='mailto:gocar.jovan@gmail.com' class='hover:underline'>Contacto</a>
 			</li>
 		</ul>
 	</div>
