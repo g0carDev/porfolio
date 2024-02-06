@@ -53,32 +53,36 @@ import Tools from '../components/icons/Tools.astro';
 				</SocialPill>
 			</nav>
 		</SectionContainer>
-		<SectionContainer id='experiencia'>
-			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
-				<BriefCaseIcon class='size-7' /> Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
-		<SectionContainer id='sobre-mi'>
-			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80'>
-				<ProfileCheck class='size-7' /> Sobre mi
-			</h2>
-			<AboutMe />
-		</SectionContainer>
-		<SectionContainer id='proyectos'>
-			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
-				<CodeIcon class='size-7' /> Proyectos
-			</h2>
-			<Projects />
-			<h3 class='py-5 text-2xl text-yellow-200'>Trello Clon en desarrollo...</h3>
-		</SectionContainer>
-		<SectionContainer id='tecnologias'>
-			<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
-				<Tools class='size-7' /> Herramientas de trabajo
-			</h2>
-			<h3 class='pb-5'>Tecnologias y servicios que he utilizado en proyectos personales y laborales.</h3>
-			<Skills />
-		</SectionContainer>
+		<div class="space-y-24">
+			<SectionContainer id='experiencia'>
+				<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
+					<BriefCaseIcon class='size-7' /> Experiencia Laboral
+				</h2>
+				<div class="w-full max-w-3xl">
+					<Experience />
+				</div>
+			</SectionContainer>
+			<SectionContainer id='sobre-mi'>
+				<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80'>
+					<ProfileCheck class='size-7' /> Sobre mi
+				</h2>
+				<AboutMe />
+			</SectionContainer>
+			<SectionContainer id='proyectos'>
+				<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
+					<CodeIcon class='size-7' /> Proyectos
+				</h2>
+				<Projects />
+				<h3 class='py-5 text-2xl text-yellow-200'>Trello Clon en desarrollo...</h3>
+			</SectionContainer>
+			<SectionContainer id='tecnologias'>
+				<h2 class='text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/80'>
+					<Tools class='size-7' /> Herramientas de trabajo
+				</h2>
+				<h3 class='pb-5'>Tecnologias y servicios que he utilizado en proyectos personales y laborales.</h3>
+				<Skills />
+			</SectionContainer>
+		</div>
 	</main>
 </Layout>
 
